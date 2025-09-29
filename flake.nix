@@ -11,7 +11,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
     in {
         devShells.${system}.default = pkgs.mkShell {
-            nativeBuildInputs = [ pkgs.rustPlatform.rustc pkgs.rustPlatform.cargo ];
+            nativeBuildInputs = [ pkgs.rustc pkgs.cargo ];
         };
         packages.${system}.default = pkgs.rustPlatform.buildRustPackage rec {
             pname = "pg-setup-from-env";
